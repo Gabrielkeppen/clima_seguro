@@ -3,6 +3,9 @@ import os
 import weather
 import requests
 
+"""
+ferramenta do pytest usada para alterar temporariamente comportamentos no código durante os testes
+"""
 from _pytest.monkeypatch import MonkeyPatch
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 

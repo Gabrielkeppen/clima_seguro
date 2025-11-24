@@ -61,7 +61,7 @@ def get_forecast_daily(city: str):
         daily_forecast = []
 
         for item in data["list"]:
-            # Pegamos só os registros do meio-dia
+            # só os registros do meio-dia
             if "12:00:00" in item["dt_txt"]:
                 daily_forecast.append({
                     "data": item["dt_txt"].split(" ")[0],

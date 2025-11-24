@@ -23,6 +23,9 @@ def main():
     elif op == "2":
         previsoes = get_forecast_daily(cidade)
 
+        """"
+        verificando se a sua função retornou um erro ao invés de retornar as previsões normais
+        """
         if isinstance(previsoes, dict) and "error" in previsoes:
             print("Erro:", previsoes["error"])
         else:
@@ -42,5 +45,8 @@ def main():
         else:
             print("\n Nenhum risco detectado para os próximos dias.")
 
+"""
+Só execute a função main() se este arquivo for executado diretamente, não se for importado:
+"""
 if __name__ == "__main__":
     main()
