@@ -1,18 +1,18 @@
 from weather import get_weather
 
 def main():
-    city = input("Digite a cidade: ")
+    print("=== Sistema de Monitoramento Climático ===")
+    city = input("Digite o nome da cidade: ")
 
-    data = get_weather(city)
+    resultado = get_weather(city)
 
-    if "error" in data:
-        print("Erro:", data["error"])
-        return
-
-    print(f"\nClima em {data['name']}")
-    print("Temperatura:", data["main"]["temp"], "°C")
-    print("Clima:", data["weather"][0]["description"])
-    print("Vento:", data["wind"]["speed"], "km/h")
+    if "error" in resultado:
+        print("Erro:", resultado["error"])
+    else:
+        print("\nClima em:", resultado["cidade"])
+        print("Temperatura:", resultado["temperatura"], "°C")
+        print("Descrição:", resultado["descricao"])
+        print("Vento:", resultado["vento"], "km/h")
 
 if __name__ == "__main__":
     main()
